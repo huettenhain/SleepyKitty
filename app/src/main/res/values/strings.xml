@@ -3,5 +3,5 @@
     <string name="enabled">The sleepy kitty is watching your lock screen.</string>
     <string name="device_admin_explanation">The sleepy kitty wants to protect you from thieves!</string>
     <string name="shutdown">sleepy kitty to the rescue, shutdown initiated.</string>
-    <string name="error_superuser">kitty go no root!</string>
+    <string name="error_superuser">kitty got no root!</string>
 </resources>

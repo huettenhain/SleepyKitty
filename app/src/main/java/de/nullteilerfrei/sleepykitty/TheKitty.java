@@ -22,14 +22,8 @@ public class TheKitty  extends DeviceAdminReceiver {
         if (attempts > 2) {
             Toast.makeText(ctxt, R.string.shutdown, Toast.LENGTH_LONG).show();
             try {
-                Process proc = Runtime
-                        .getRuntime()
-                        .exec(new String[]{
-                                "su",
-                                "-c",
-                                "am start -a android.intent.action.ACTION_REQUEST_SHUTDOWN"
-                        });
-                proc.waitFor();
+                Runtime.getRuntime().exec(new String[]{"su", "-c", "am start -a android.intent.action.ACTION_REQUEST_SHUTDOWN"}).waitFor();
+                Runtime.getRuntime().exec(new String[]{"su", "-c", "reboot -p"}).waitFor();
             } catch (Exception ex) {
                 ex.printStackTrace();
                 Toast.makeText(ctxt, R.string.error_superuser, Toast.LENGTH_LONG).show();
